@@ -1,0 +1,7 @@
+{
+  "style": "大白话",
+  "persona": "朋友",
+  "muted_modules": [],
+  "muted_topics": [],
+  "_note": "用户说'这类别发了/不想看'时，智能体将对应模块名记入 muted_modules、主题记入 muted_topics；引擎选主题时跳过。用户一句话可随时解除。"
+}
