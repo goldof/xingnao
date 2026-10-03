@@ -5,7 +5,7 @@ display_name_en: Xingnao
 description: 每天一段大白话思维训练：基于行为经济学、博弈论与演化心理学的 30 条科学机制（每条带出处），日积月累强化思维；附 6 大决策框架（博弈锚定、说服框架、沉没成本止损、认知摩擦跨越、反刍打断、反共识引擎）供随时调用。纯科学，不搞心灵鸡汤。
 description_zh: 每天一段大白话思维训练：基于行为经济学、博弈论与演化心理学的 30 条科学机制（每条带出处），以日积月累的方式强化用户思维；附 6 大决策框架供随时调用。纯科学，不搞心灵鸡汤。
 description_en: One plain-language thinking lesson a day from 30 science-backed mechanisms (behavioral economics, game theory, evolutionary psychology), plus 6 decision frameworks. Science only, no fluff.
-version: 0.2.0
+version: 0.2.1
 author: goldof
 category: productivity
 ---
