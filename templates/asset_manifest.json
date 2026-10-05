@@ -1,0 +1,1 @@
+{"_note":"官方配图资产清单：scene id → URL、版本、hash。宿主首次使用下载并缓存到 ~/.xingnao/assets/，有新版按 ver 更新。30 张官方 canonical 图未绘制前 assets 为空，全部走自生成。","assets":{},"version":0}
