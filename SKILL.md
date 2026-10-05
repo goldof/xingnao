@@ -4,7 +4,7 @@ display_name: 醒脑
 display_name_en: Xingnao
 description: 每天 2 分钟大白话：一个反直觉小故事＋一张图，回一句，科学解释才开奖。30 条科学机制打底（行为经济学、博弈论、演化心理学，每条带出处），6 大决策框架随时调用。纯科学，不搞心灵鸡汤——说不出机制的不发。
 description_zh: 每天 2 分钟大白话：一个反直觉小故事＋一张图，回一句，科学解释才开奖。写给每天要做决策的人。30 条科学机制打底（行为经济学、博弈论、演化心理学，每条带出处），6 大决策框架随时调用。纯科学，不搞心灵鸡汤——说不出机制的不发。
-description_en: Two minutes a day, in plain language: a counter-intuitive micro-story with an illustration — reply to unlock the science behind it. For people who make decisions every day. Grounded in 30 cited mechanisms (behavioral economics, game theory, evolutionary psychology), plus 6 decision frameworks on call. Science only, no fluff — if it can't name its mechanism, it doesn't ship.
+description_en: "Two minutes a day, in plain language: a counter-intuitive micro-story with an illustration — reply to unlock the science behind it. For people who make decisions every day. Grounded in 30 cited mechanisms (behavioral economics, game theory, evolutionary psychology), plus 6 decision frameworks on call. Science only, no fluff — if it can't name its mechanism, it doesn't ship."
 version: 0.3.0
 author: goldof
 category: productivity
