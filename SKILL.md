@@ -2,9 +2,9 @@
 name: adaptive-cognition
 display_name: 醒脑
 display_name_en: Xingnao
-description: 每天一段大白话思维训练：基于行为经济学、博弈论与演化心理学的 30 条科学机制（每条带出处），日积月累强化思维；附 6 大决策框架（博弈锚定、说服框架、沉没成本止损、认知摩擦跨越、反刍打断、反共识引擎）供随时调用。纯科学，不搞心灵鸡汤。
-description_zh: 每天一段大白话思维训练：基于行为经济学、博弈论与演化心理学的 30 条科学机制（每条带出处），以日积月累的方式强化用户思维；附 6 大决策框架供随时调用。纯科学，不搞心灵鸡汤。
-description_en: One plain-language thinking lesson a day from 30 science-backed mechanisms (behavioral economics, game theory, evolutionary psychology), plus 6 decision frameworks. Science only, no fluff.
+description: 每天 2 分钟大白话：一个反直觉小故事＋一张图，回一句，科学解释才开奖。30 条科学机制打底（行为经济学、博弈论、演化心理学，每条带出处），6 大决策框架随时调用。纯科学，不搞心灵鸡汤——说不出机制的不发。
+description_zh: 每天 2 分钟大白话：一个反直觉小故事＋一张图，回一句，科学解释才开奖。写给每天要做决策的人。30 条科学机制打底（行为经济学、博弈论、演化心理学，每条带出处），6 大决策框架随时调用。纯科学，不搞心灵鸡汤——说不出机制的不发。
+description_en: Two minutes a day, in plain language: a counter-intuitive micro-story with an illustration — reply to unlock the science behind it. For people who make decisions every day. Grounded in 30 cited mechanisms (behavioral economics, game theory, evolutionary psychology), plus 6 decision frameworks on call. Science only, no fluff — if it can't name its mechanism, it doesn't ship.
 version: 0.3.0
 author: goldof
 category: productivity
@@ -175,6 +175,7 @@ category: productivity
   - **确定性校验**（笼子能代码化的一律代码化）：字数、署名行、钩子痕迹、mute 名单、30 天场景去重由 skill 包 `bin/qc-beat1.py` 硬检，不靠模型自觉——宿主在质检阶段调用，不通过按 failures 重写（最多 2 次）；脚本不可用时回退模型自检。**prompt 只管变不成代码的东西**：机制未剧透、叙事质量、不说教。
   - **发挥的天花板 = QC 的带宽**：批量产出前先声明 QC 方式（逐条检/抽查）与吞吐量；未声明 QC 带宽的批量任务不执行。量不许冲垮质。
   - 署名随内容：每段末尾固定署名行"——醒脑 · goldof 的思维训练"，截图传播也带走署名。
+  - 转发建议：用户截图转发时，可配一句现成的转发语——"每天一个反直觉，挺有意思"。降低自发分享的门槛；不强制、不奖励分享。
 
 ---
 
