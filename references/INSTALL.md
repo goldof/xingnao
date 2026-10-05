@@ -27,3 +27,17 @@
 - 领域自适应：不需要用户画像。段子案例的领域由智能体的上下文和记忆决定，装完即用。
 - 卸载：删 skill 前先停掉定时任务，否则任务会继续空跑。
 - 许可：MIT（见 LICENSE）；改版分发见 SKILL.md「改版与免责」。
+
+## 四、工程脚本（bin/）
+
+能代码化的约束一律代码化，prompt 只管变不成代码的东西。各脚本独立可测（`python3 bin/<脚本> --help`）：
+
+| 脚本 | loop 环节 | 作用 |
+|---|---|---|
+| `env-probe.py` | 探 | 能力探针：实测 renderer/persistence 并重写 env_profile.json；image 由宿主声明（`--image native`） |
+| `next-topic.py` | 选 | 确定性选主题：解析 TOPICS.md，按 1→6 轮换＋mute＋30 天去重，输出 `{module, topic, source}` JSON |
+| `qc-beat1.py` | 检 | 第一段硬门：字数 120–180、署名行、钩子痕迹、mute、30 天场景去重；JSON 报 pass/failures |
+| `qc-beat2.py` | 收 | 第二段硬门：字数 200–300、署名行；年份/边界条件词只做 warning |
+| `metrics.py` | 量 | 北极星仪表：从 sent_log＋reply_log 算回复率/回来率/连击（`--days N`） |
+
+工程 loop：探→选→想→写→检→发（内环，每日定时任务）→收→量→改（外环，对话中及定期）。详见 SKILL.md「工程 loop」。

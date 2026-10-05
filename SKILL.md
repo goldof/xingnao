@@ -134,13 +134,18 @@ category: productivity
   - 以真长进为奖励：把思维练清楚、掌握叫得上名的机制、用户自己的追问——不庆祝数量（无"连续 X 天真棒"话术）。
   - 一键暂停/退订（`paused` 开关，模板已带），退订不玩话术。
   - 每天只推一次，不 nagging；不追问"你怎么不回"，不"最后一次提醒"。
-- **每日流程（先做这六步）**：
-  1. 跑环境探针，写 `~/.xingnao/env_profile.json`（宿主能力档案，见下；每次必跑——云沙盒会被清空，不可假设上次的配置还在）。
-  2. 读 `~/.xingnao/sent_log.json`（已发送主题记录）和 `~/.xingnao/user_prefs.json`（mute 列表）。
-  3. 打开本 skill 的 `references/TOPICS.md`，按 6 模块顺序取下一个未发送的主题；被 mute 的模块/主题跳过（mute 优先于轮换）。
-  4. 按下面的两段式格式生成**第一段**（含配图，渲染路径由 env_profile 决定）。
-  5. 生成后把主题 id 追加进 `~/.xingnao/sent_log.json`（配图启用时记为 `{topic, scene}` 对象，见配图去重；只读写 `~/.xingnao/`，永不写 skill 目录）。
-  6. 推送第一段给用户。用户回复（追问"为什么"/"什么原理"等）时，再给出**第二段**科学解释。
+- **工程 loop**（探→选→想→写→检→发→收→量→改，闭环）：
+  - 内环（每日，定时任务跑）：探→选→想→写→检→发。
+  - 外环（按需/定期）：收→量→改。
+  - **探**：跑 `bin/env-probe.py` 写 `~/.xingnao/env_profile.json`（renderer/persistence 实测；image 由宿主声明，无声明沿用旧值）。云沙盒每次必跑，不可假设上次的配置还在。
+  - **选**：跑 `bin/next-topic.py`（--topics/--sent-log/--prefs）拿 `{module, topic, source}`；脚本不可用时按 prose 轮换（模块 1→…→6→1，mute 优先于轮换，30 天主题不重）。
+  - **想**：深度推理三行——①核心逻辑一句话 ②最常见的误用 ③反常识的切入角度；必须包含边界条件（正向用/反向风险）。这是油门，全力以赴。
+  - **写**：按两段式生成第一段＋配图（双源机制，见下）。
+  - **检**：两道门——`bin/qc-beat1.py` 硬门（字数/署名/钩子/mute/去重），不过按 failures 重写（最多 2 次）；模型四检（有叙事/钩子不剧透机制/配图不剧透/署名行在）。脚本不可用时回退模型自检。
+  - **发**：推送第一段；追加 `~/.xingnao/sent_log.json`（先读后写；只读写 `~/.xingnao/`，永不写 skill 目录）。
+  - **收**：用户凡有针对当日段子的实质回复，记 `~/.xingnao/reply_log.json` 一笔 `{date, topic, asked_why}`；用户追问时给第二段（`bin/qc-beat2.py` 校验：200–300 字＋署名行硬门）。
+  - **量**：`bin/metrics.py --days 30` 看回复率/回来率/连击。北极星是回复率和回来率。
+  - **改**：回复率掉 → 按 Prompt→Ability→Motivation 诊断，调骨架不调内容，下一轮验证。
 - **环境自适应（env_profile）**：skill 不假设宿主能力，每次运行时探测并写入 `~/.xingnao/env_profile.json`（状态契约的一部分；模板见包内 `templates/env_profile.json`）。只探三项，探针必须轻、必须每次可重跑：
   - `image`：宿主图像能力——`native`（宿主可直接生图）/ `svg`（无原生能力，但可手写扁平矢量 SVG＋本地渲染）/ `none`（纯文字）。
   - `svg_renderer`（仅 image=svg 时有效）：`chromium`（无头 Chromium 渲染）/ `rsvg`（rsvg-convert）/ `none`。
