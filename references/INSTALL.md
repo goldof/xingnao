@@ -5,7 +5,7 @@
 ## 一、智能体操作清单（照着执行）
 
 1. 把本目录放入宿主智能体的 skills 目录（具体路径按宿主平台的 skill 安装规范）。
-2. 初始化用户数据目录 `~/.xingnao/`：把包内 `templates/` 下的 `sent_log.json`（空数组 `[]`）和 `user_prefs.json`（默认偏好）复制过去。已有历史的不要覆盖。运行时状态只读写 `~/.xingnao/`，永不写 skill 目录（市场更新会整体覆盖 skill 目录）。
+2. 初始化用户数据目录 `~/.xingnao/`：把包内 `templates/` 下的 `sent_log.json`（空数组 `[]`）、`user_prefs.json`（默认偏好）、`env_profile.json`（宿主能力档案，首次运行由探针重写）复制过去。已有历史的不要覆盖。运行时状态只读写 `~/.xingnao/`，永不写 skill 目录（市场更新会整体覆盖 skill 目录）。
 3. 用宿主平台的定时任务机制建一个每日任务：
    - 任务内容："按本 skill 的 SKILL.md『晨间段子模式』生成今日段子，追加 sent_log.json，并推送给用户"。
    - 定时任务命令里的路径是本机特定的，按实际安装路径重建。

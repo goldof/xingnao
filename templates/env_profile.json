@@ -1,0 +1,1 @@
+{"_note":"宿主能力档案：每次晨间任务开始时由探针重写（云沙盒会被清空，不可假设上次的还在）。image: native=宿主直出生图 / svg=手写SVG+本地渲染 / none=纯文字；svg_renderer 仅 image=svg 时有效：chromium=无头Chromium / rsvg=rsvg-convert / none；persistence: local=~/.xingnao/跨天保留 / ephemeral=沙盒清空即丢（持久化是宿主的事）。","image":"svg","persistence":"local","probed_at":"","svg_renderer":"chromium"}
